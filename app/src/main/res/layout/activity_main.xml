@@ -10,7 +10,9 @@
     tools:context="br.dmscn.agenda.MainActivity"
     android:weightSum="5">
 
+    <!--  Logo Agenda -->
     <LinearLayout
+        android:id="@+id/layLogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="3"
@@ -24,10 +26,171 @@
             app:srcCompat="@drawable/logo_agenda"/>
 
     </LinearLayout>
+    <!--  End Logo Agenda -->
 
-
-
+    <!--  Login Inputs -->
     <LinearLayout
+        android:id="@+id/layLoginInputs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/profile"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="@string/txt_username"
+                android:backgroundTint="@color/white"
+                android:textColorHint="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/pass"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="@string/txt_password"
+                android:backgroundTint="@color/white"
+                android:textColorHint="@color/white"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <!--  End Login Inputs -->
+
+    <!--  Sign Up Inputs -->
+    <LinearLayout
+        android:id="@+id/laySignUpInputs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_weight="2"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/profile"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="@string/txt_full_name"
+                android:backgroundTint="@color/white"
+                android:textColorHint="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/mail"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="@string/txt_email"
+                android:backgroundTint="@color/white"
+                android:textColorHint="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/username"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="@string/txt_username"
+                android:backgroundTint="@color/white"
+                android:textColorHint="@color/white"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/pass"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:hint="@string/txt_password"
+                android:backgroundTint="@color/white"
+                android:textColorHint="@color/white"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <!--  End Sign Up Inputs -->
+
+    <!--  Main Buttons  -->
+    <LinearLayout
+        android:id="@+id/layMainButtons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -53,6 +216,72 @@
             style="?android:attr/borderlessButtonStyle"
             android:background="@drawable/buttonshape_empty" />
     </LinearLayout>
+    <!--  End main buttons -->
+
+    <!--  Login Buttons -->
+    <LinearLayout
+        android:id="@+id/layLoginButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="top"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_login"
+            android:textColor="@color/white"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/buttonshape_empty" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:text="@string/txt_forgot_password"/>
+
+    </LinearLayout>
+    <!--  End Login Buttons-->
+
+    <!--  Sign Up Buttons -->
+    <LinearLayout
+        android:id="@+id/laySignUpButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="top"
+        android:layout_weight="1"
+        android:visibility="gone">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_create_account"
+            android:textColor="@color/white"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/buttonshape_empty" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:textAllCaps="false"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:text="@string/btn_already_member"
+            android:textColorHighlight="@color/white"/>
+
+    </LinearLayout>
+    <!--  End Sign Up Buttons -->
 
 
 
