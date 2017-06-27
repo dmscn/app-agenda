@@ -23,18 +23,9 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LinearLayout layLogo;
-                LinearLayout layInputs;
-                LinearLayout layButtons;
+                launchLoginScreen();
 
-                layLogo = (LinearLayout) findViewById(R.id.layLogo);
-                layInputs = (LinearLayout) findViewById(R.id.layLoginInputs);
-                layButtons = (LinearLayout) findViewById(R.id.layLoginButtons);
-
-                layMainButtons.setVisibility(View.GONE);
-                layLogo.setWeightSum(1);
-                layInputs.setVisibility(View.VISIBLE);
-                layButtons.setVisibility(View.VISIBLE);
+                // forgot passowrd button
             }
         });
 
@@ -43,19 +34,69 @@ public class MainActivity extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LinearLayout layLogo;
-                LinearLayout layInputs;
-                LinearLayout layButtons;
+                launchSignUpScreen();
 
-                layLogo = (LinearLayout) findViewById(R.id.layLogo);
-                layInputs = (LinearLayout) findViewById(R.id.laySignUpInputs);
-                layButtons = (LinearLayout) findViewById(R.id.laySignUpButtons);
-
-                layMainButtons.setVisibility(View.GONE);
-                layLogo.setWeightSum(1);
-                layInputs.setVisibility(View.VISIBLE);
-                layButtons.setVisibility(View.VISIBLE);
+                // already a member button
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        LinearLayout layLogo;
+        LinearLayout layInputs;
+        LinearLayout layButtons;
+
+        layLogo = (LinearLayout) findViewById(R.id.layLogo);
+
+        if(layMainButtons.getVisibility() == View.GONE) {
+
+            layMainButtons.setVisibility(View.VISIBLE);
+            layLogo.setWeightSum(3);
+
+            layInputs = (LinearLayout) findViewById(R.id.layLoginInputs);
+            layButtons = (LinearLayout) findViewById(R.id.layLoginButtons);
+
+            layInputs.setVisibility(View.GONE);
+            layButtons.setVisibility(View.GONE);
+
+            layInputs = (LinearLayout) findViewById(R.id.laySignUpInputs);
+            layButtons = (LinearLayout) findViewById(R.id.laySignUpButtons);
+
+            layInputs.setVisibility(View.GONE);
+            layButtons.setVisibility(View.GONE);
+        } else {
+            finish();
+        }
+    }
+
+    private void launchLoginScreen() {
+        LinearLayout layLogo;
+        LinearLayout layInputs;
+        LinearLayout layButtons;
+
+        layLogo = (LinearLayout) findViewById(R.id.layLogo);
+        layInputs = (LinearLayout) findViewById(R.id.layLoginInputs);
+        layButtons = (LinearLayout) findViewById(R.id.layLoginButtons);
+
+        layMainButtons.setVisibility(View.GONE);
+        layLogo.setWeightSum(1);
+        layInputs.setVisibility(View.VISIBLE);
+        layButtons.setVisibility(View.VISIBLE);
+    }
+
+    private void launchSignUpScreen() {
+        LinearLayout layLogo;
+        LinearLayout layInputs;
+        LinearLayout layButtons;
+
+        layLogo = (LinearLayout) findViewById(R.id.layLogo);
+        layInputs = (LinearLayout) findViewById(R.id.laySignUpInputs);
+        layButtons = (LinearLayout) findViewById(R.id.laySignUpButtons);
+
+        layMainButtons.setVisibility(View.GONE);
+        layLogo.setWeightSum(1);
+        layInputs.setVisibility(View.VISIBLE);
+        layButtons.setVisibility(View.VISIBLE);
     }
 }
