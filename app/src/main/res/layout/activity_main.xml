@@ -270,6 +270,7 @@
             android:background="@drawable/buttonshape_empty" />
 
         <Button
+            android:id="@+id/btnAlreadyMember"
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:layout_marginTop="10dp"

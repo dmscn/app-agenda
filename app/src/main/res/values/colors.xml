@@ -11,4 +11,6 @@
     <color name="silverPink">#C5BAAF</color>
     <color name="outerSpace">#484a47</color>
 
+    <color name="black_overlay">#66000000</color>
+
 </resources>
