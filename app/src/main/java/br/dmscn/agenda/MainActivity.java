@@ -1,7 +1,6 @@
 package br.dmscn.agenda;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,11 +8,18 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import br.dmscn.agenda.controller.DBController;
+
 public class MainActivity extends AppCompatActivity {
+    Button btnCallLogin;
+    Button btnCallSignUp;
     Button btnLogin;
     Button btnSignUp;
+    Button btnAlreadyMember;
+    Button btnForgot;
     LinearLayout layMainButtons;
 
     @Override
@@ -28,27 +34,64 @@ public class MainActivity extends AppCompatActivity {
         w.setStatusBarColor(ContextCompat.getColor(this, R.color.desertSand));
 
         layMainButtons = (LinearLayout) findViewById(R.id.layMainButtons);
-        btnLogin = (Button) findViewById(R.id.btnCallLogin);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        // display login screen
+        btnCallLogin = (Button) findViewById(R.id.btnCallLogin);
+
+        btnCallLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 launchLoginScreen();
-
-                // forgot passowrd button
             }
         });
 
-        btnSignUp = (Button) findViewById(R.id.btnCallSignUp);
+        // display sign up screen
+        btnCallSignUp = (Button) findViewById(R.id.btnCallSignUp);
 
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        btnCallSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 launchSignUpScreen();
             }
         });
 
-        Button btnAlreadyMember = (Button) findViewById(R.id.btnAlreadyMember);
+
+        // log in
+        btnLogin = (Button) findViewById(R.id.btnLogin);
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText username = (EditText) findViewById(R.id.edtUsername);
+                EditText password = (EditText) findViewById(R.id.edtPassword);
+
+
+                if(DBController.login(username.getText().toString(), password.getText().toString())) {
+                    Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+                    // TODO iplement intent extra
+                    startActivity(intent);
+                    finish();
+                }
+            }
+        });
+
+
+        // sign up
+        btnSignUp = (Button) findViewById(R.id.btnSignUp);
+
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText name = (EditText) findViewById(R.id.edtFullName);
+                EditText email = (EditText) findViewById(R.id.edtEmail);
+                EditText username = (EditText) findViewById(R.id.edtNewUsername);
+                EditText password = (EditText) findViewById(R.id.edtNewPassword);
+
+                DBController.newProfile(name.getText().toString(), email.getText().toString(), username.getText().toString(), password.getText().toString());
+            }
+        });
+
+        btnAlreadyMember = (Button) findViewById(R.id.btnAlreadyMember);
 
         btnAlreadyMember.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +99,10 @@ public class MainActivity extends AppCompatActivity {
                 launchLoginScreen();
             }
         });
+
+        btnForgot = (Button) findViewById(R.id.btnForgot);
+
+
     }
 
     @Override

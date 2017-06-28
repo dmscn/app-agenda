@@ -52,6 +52,7 @@
                 app:srcCompat="@drawable/profile"/>
 
             <EditText
+                android:id="@+id/edtUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -74,6 +75,7 @@
                 app:srcCompat="@drawable/pass"/>
 
             <EditText
+                android:id="@+id/edtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -110,12 +112,14 @@
                 app:srcCompat="@drawable/profile"/>
 
             <EditText
+                android:id="@+id/edtFullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:hint="@string/txt_full_name"
                 android:backgroundTint="@color/white"
-                android:textColorHint="@color/white"/>
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"/>
         </LinearLayout>
 
         <LinearLayout
@@ -132,12 +136,14 @@
                 app:srcCompat="@drawable/mail"/>
 
             <EditText
+                android:id="@+id/edtEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:hint="@string/txt_email"
                 android:backgroundTint="@color/white"
-                android:textColorHint="@color/white"/>
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"/>
         </LinearLayout>
 
         <LinearLayout
@@ -154,12 +160,14 @@
                 app:srcCompat="@drawable/username"/>
 
             <EditText
+                android:id="@+id/edtNewUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:hint="@string/txt_username"
                 android:backgroundTint="@color/white"
-                android:textColorHint="@color/white"/>
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"/>
         </LinearLayout>
 
         <LinearLayout
@@ -176,12 +184,14 @@
                 app:srcCompat="@drawable/pass"/>
 
             <EditText
+                android:id="@+id/edtNewPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:hint="@string/txt_password"
                 android:backgroundTint="@color/white"
-                android:textColorHint="@color/white"/>
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"/>
         </LinearLayout>
 
 
@@ -231,6 +241,7 @@
 
 
         <Button
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_login"
@@ -239,6 +250,7 @@
             android:background="@drawable/buttonshape_empty" />
 
         <Button
+            android:id="@+id/btnForgot"
             android:layout_width="match_parent"
             android:layout_height="20dp"
             android:layout_marginTop="10dp"
@@ -262,6 +274,7 @@
         android:visibility="gone">
 
         <Button
+            android:id="@+id/btnSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_create_account"

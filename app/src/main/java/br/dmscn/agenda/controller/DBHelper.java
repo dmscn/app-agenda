@@ -1,3 +1,5 @@
+package br.dmscn.agenda.controller;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -6,9 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by dmscn on 16/06/17.
  */
 
-public class DBHelper { //extends SQLiteOpenHelper {
+public class DBHelper extends SQLiteOpenHelper {
 
-    /*
+
     public static final String DB_NAME = "agenda.db";
     public static final int VERSION = 1;
 
@@ -129,12 +131,26 @@ public class DBHelper { //extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL(PROFILE_CREATE_TABLE);
+        db.execSQL(EVENT_CREATE_TABLE);
+        db.execSQL(CONTACT_CREATE_TABLE);
+        db.execSQL(TASK_CREATE_TABLE);
+        db.execSQL(NOTIFICATION_CREATE_TABLE);
+        db.execSQL(PHONE_CREATE_TABLE);
+        db.execSQL(SUBTASK_CREATE_TABLE);
+        db.execSQL(LABEL_CREATE_TABLE);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL("DROP TABLE IF EXISTS " + PROFILE_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + EVENT_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + CONTACT_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + TASK_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + NOTIFICATION_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + PHONE_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + SUBTASK_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + LABEL_TABLE);
+        onCreate(db);
     }
-    */
 }
